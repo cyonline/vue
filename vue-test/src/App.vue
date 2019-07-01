@@ -1,17 +1,20 @@
 <template>
   <div id="app">
+    <cy-header></cy-header>
     <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
   </div>
 </template>
 
 <script>
 import HelloWorld from "./components/HelloWorld.vue";
+import CyHeader from "./components/cy-header.vue";
 
 export default {
   name: "app",
   components: {
-    HelloWorld
+    HelloWorld,
+    CyHeader
   }
 };
 </script>
@@ -23,6 +26,9 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+body{
+  margin:0;
+  padding:0;
 }
 </style>
