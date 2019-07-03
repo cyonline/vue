@@ -1,7 +1,7 @@
 <template>
   <div id="header">
       <ul>
-          <li v-bind:class="{active:item.active}" v-for="item,index in nav" v-on:click="goPage(index)"><a>{{item.txt}}</a></li>
+          <li v-bind:class="{active:item.active}" v-for="item in nav" :key="item.id" v-on:click="goPage(index)"><a>{{item.txt}}</a></li>
       </ul>
   </div>
 </template>
@@ -13,10 +13,10 @@ export default {
             title:'这是一个vue项目',
             className:'active',
             nav:[
-                {'txt':'首页','active':true,'url':'index'},
-                {'txt':'page1','active':false,'url':'1'},
-                {'txt':'page2','active':false,'url':'2'},
-                {'txt':'page3','active':false,'url':'3'},
+                {'id':'0','txt':'首页','active':true,'url':'index'},
+                {'id':'1','txt':'page1','active':false,'url':'1'},
+                {'id':'2','txt':'page2','active':false,'url':'2'},
+                {'id':'3','txt':'page3','active':false,'url':'3'},
                 ],
             goPage:function(i){
                 console.info(i)
@@ -52,6 +52,7 @@ export default {
                width:100px;
                height:70px;
                line-height:70px;
+               text-align: center;
                cursor: pointer;
                &:hover{
                    background:darken(#41b883,2)
