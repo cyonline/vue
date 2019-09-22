@@ -9,10 +9,13 @@
         <input type="text" v-model="age">{{age}}
         <input type="text" v-model="sex">{{sex}} -->
         <select v-model="type"  @change="selectChange($event)">
-            <option :value="item.id" v-for="item in option" :key="item.id">{{item.name}}</option>
+            <option :value="item.id" v-for="(item,index) in option" :key="index">{{item.name}}</option>
         </select>
         select:{{typeName}}
         </div>
+        <h2>路由router</h2>
+        <!-- <router-link to="/page_1">点击我跳转第一个页面</router-link> -->
+        <router-view class="view"></router-view>
     </div>
 </template>
 <script>
