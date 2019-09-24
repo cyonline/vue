@@ -46,7 +46,7 @@ export default {
         }
     },
     mounted() {
-        console.info('mounted');
+        // console.info('mounted');
         console.info(this.data);
         this.$watch('type',function(n,o){
             console.info(n,o);
@@ -64,11 +64,14 @@ export default {
     },
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
     .content{
-        height:calc(100vh - 70px);
+        width:calc(100% - 15rem);
+        height:calc(100% - 10px);
         box-sizing: border-box;
         padding:10px;
-        background:#cdcdcd;
+        background:#fff;
+        box-shadow: 5px 0px 7px #bbbbbb;
+        border-radius: 5px;
     }
 </style>

@@ -3,13 +3,17 @@
     <cy-header></cy-header>
     <!-- <img alt="Vue logo" src="./assets/logo.png" /> -->
     <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
-    <cy-content :data='1'></cy-content>
+    <cy-container></cy-container>
+    <!-- <cy-sideBar :options="sideBar"></cy-sideBar>
+    <cy-content :data='1'></cy-content> -->
   </div>
 </template>
 
 <script>
 // import HelloWorld from "./components/HelloWorld.vue";
 import cyHeader from './components/Header.vue';
+import Container from './components/Container.vue'
+import cySideBar from './components/SideBar.vue';
 import cyContent from './components/Content.vue';
 export default {
   name: "app",
@@ -17,7 +21,14 @@ export default {
     // HelloWorld components 里应该是对象的形式,写成一个是因为键名和键值相同
     // 'HelloWorld':HelloWorld,
     'cy-header':cyHeader,
-    'cy-content':cyContent
+    'cy-content':cyContent,
+    'cy-sideBar':cySideBar,
+    'cy-container':Container
+  },
+  data(){
+    return {
+      
+    }
   }
 };
 </script>
@@ -32,5 +43,6 @@ export default {
 body {
   margin:0;
   padding:0;
+  background:#ddd;
 }
 </style>

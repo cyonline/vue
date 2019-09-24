@@ -38,6 +38,8 @@ export default {
         display: flex;
         align-items: center;
         justify-content: center;
+        margin-bottom:10px;
+        box-shadow: 0px 6px 5px -7px #000;
     }
     .active{
         background:darken(#41b883,2);
