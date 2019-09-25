@@ -15,7 +15,7 @@ const routes = [
         path: "/page_1/",
         component: Page_1,
         children: [
-            { path :'',component:AComponent},
+            { path: '', component: AComponent },
             { path: 'a', component: AComponent },
             { path: 'b', component: BComponent },
         ]
@@ -24,9 +24,9 @@ const routes = [
         path: "/page_2",
         component: Page_2
     }
-]
+];
 export const router = new VueRouter({
-    mode: "history",
-    base: __dirname,
-    routes,
-})
+  mode: "history",
+  base: __dirname,
+  routes,
+});

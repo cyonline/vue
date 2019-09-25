@@ -7,7 +7,7 @@ Vue.config.debug = true;
 
 Vue.config.productionTip = false;
 
-import {router} from "./router";
+import { router } from "./router";
 
 new Vue({
   store,
