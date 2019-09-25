@@ -2,7 +2,8 @@
     <div class="sideBar">
         <div>
             <ul>
-                <li v-for="(item,index) in options" :key="index"><a>{{item.txt}}</a></li>
+                <li v-for="(item,index) in options" :key="index">
+                    <a><router-link :to="item.path">{{item.txt}}</router-link></a></li>
             </ul>
         </div>
     </div>

@@ -2,6 +2,7 @@
     <div class="container">
         <app-side :options="sideBar"></app-side>
         <app-content></app-content>
+        <!-- <router-view></router-view> -->
     </div>
 </template>
 <script>
@@ -17,9 +18,9 @@ export default {
     data(){
         return{
             sideBar:[
-                {'txt':'第一页','path':''},
-                {'txt':'第二页','path':''},
-                {'txt':'第三页','path':''},
+                {'txt':'第一页','path':'/page_1/a'},
+                {'txt':'第二页','path':'/page_1/b'},
+                {'txt':'第三页','path':'/page_1/c'},
             ]
         }
     },

@@ -1,7 +1,9 @@
 <template>
   <div id="header">
       <ul>
-          <li v-bind:class="{active:item.active}" v-for="(item,index) in nav" :key="item.id" v-on:click="goPage(index)"><router-link :to="item.url">{{item.txt}}</router-link></li>
+          <li v-bind:class="{active:item.active}" v-for="(item,index) in nav" :key="item.id" v-on:click="goPage(index)">
+              <router-link :to="item.url">{{item.txt}}</router-link>
+          </li>
       </ul>
   </div>
 </template>
@@ -14,9 +16,9 @@ export default {
             className:'active',
             nav:[
                 {'id':'0','txt':'首页','active':true,'url':''},
-                {'id':'1','txt':'page1','active':false,'url':'page_1'},
-                {'id':'2','txt':'page2','active':false,'url':'page_2'},
-                {'id':'3','txt':'page3','active':false,'url':'page_3'},
+                {'id':'1','txt':'page1','active':false,'url':'/page_1'},
+                {'id':'2','txt':'page2','active':false,'url':'/page_2'},
+                {'id':'3','txt':'page3','active':false,'url':'/page_3'},
                 ],
             goPage:function(i){
                 console.info(i);

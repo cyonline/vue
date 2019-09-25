@@ -11,10 +11,10 @@
 
 <script>
 // import HelloWorld from "./components/HelloWorld.vue";
-import cyHeader from './components/Header.vue';
-import Container from './components/Container.vue'
-import cySideBar from './components/SideBar.vue';
-import cyContent from './components/Content.vue';
+import cyHeader from './components/layout/Header.vue';
+import Container from './components/layout/Container.vue'
+import cySideBar from './components/layout/SideBar.vue';
+import cyContent from './components/layout/Content.vue';
 export default {
   name: "app",
   components: {
