@@ -89,6 +89,9 @@ module.exports = {
 
             postcss: {
                 // options here will be passed to postcss-loader
+            },
+            sass: {
+                data: `@import "@/common/styles/_colors.scss";`
             }
         }
     },

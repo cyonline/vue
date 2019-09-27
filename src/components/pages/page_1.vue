@@ -15,8 +15,8 @@ export default {
     return {
       sidebar: [
         { txt: "第一页", path: "/page_1/a" },
-        { txt: "第二页", path: "/page_1/b" },
-        { txt: "第三页", path: "/page_1/c" }
+        { txt: "路由", path: "/page_1/b" },
+        { txt: "重定向和别名", path: "/page_1/c" }
       ]
     };
   }

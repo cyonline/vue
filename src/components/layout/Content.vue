@@ -17,5 +17,6 @@ export default {
   background: #fff;
   box-shadow: 5px 0px 7px #bbbbbb;
   border-radius: 5px;
+  overflow-y: scroll;
 }
 </style>

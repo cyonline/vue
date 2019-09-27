@@ -7,10 +7,12 @@
       </select>
       select:{{ typeName }}
     <!-- </div> -->
-    <h2>嵌套路由</h2>
+    <h2>编程式导航</h2>
+    <a href="javascript:;" @click="goB()">点我跳转b页面</a>
   </div>
 </template>
 <script>
+import router from '../../../router';
 export default {
   name: "aComponent",
   data() {
@@ -47,6 +49,9 @@ export default {
           this.typeName = ele.name;
         }
       });
+    },
+    goB() {
+      this.$router.push({name:'b'})
     }
   }
 };

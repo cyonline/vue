@@ -24,7 +24,7 @@ export default {
 .sideBar {
   width: 15rem;
   height: calc(100% - 10px);
-  background: #f9f9f9;
+  background: #fff;
   margin-right: 10px;
   box-shadow: 5px 0px 7px #bbbbbb;
   border-radius: 5px;
