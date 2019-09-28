@@ -52,7 +52,6 @@
         <p>这两种方式都会把路由导航到 /user/123 路径。</p>
       </div>
     </div>
-    
   </div>
 </template>
 <script>
@@ -61,12 +60,14 @@ export default {
   data() {
     return {
       title_1: "编程式导航",
-      title_2: "命名路由"
+      title_2: "命名路由",
+      msg:'route',
     };
   },
   mounted() {
     console.info("子页面b");
-  }
+
+  },
 };
 </script>
 <style lang="scss" scoped>

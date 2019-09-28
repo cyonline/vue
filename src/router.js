@@ -7,6 +7,7 @@ import Page_2 from "./components/pages/page_2";
 import AComponent from "./components/pages/page_1/aComponent";
 import BComponent from "./components/pages/page_1/bComponent";
 import CComponent from "./components/pages/page_1/cComponent";
+import DComponent from "./components/pages/page_1/dComponent";
 
 Vue.use(VueRouter);
 
@@ -20,6 +21,7 @@ const routes = [
             { path: 'a', component: AComponent, name:'a' },
             { path: 'b', component: BComponent, name: 'b' },
             { path: 'c', component: CComponent, name: 'c' },
+            { path: 'd', component: DComponent, name: 'd' },
             { path: '**', redirect:'a'},
         ]
     },

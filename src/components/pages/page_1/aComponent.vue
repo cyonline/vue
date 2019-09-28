@@ -8,7 +8,7 @@
       select:{{ typeName }}
     <!-- </div> -->
     <h2>编程式导航</h2>
-    <a href="javascript:;" @click="goB()">点我跳转b页面</a>
+    <a href="javascript:;" @click="goB()">点我跳转d页面</a>
   </div>
 </template>
 <script>
@@ -51,7 +51,7 @@ export default {
       });
     },
     goB() {
-      this.$router.push({name:'b'})
+      this.$router.push({name:'d',params:{ name: 'cy',page: 'a'}})
     }
   }
 };
