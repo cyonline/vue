@@ -1,5 +1,5 @@
 <template>
-  <div id="page1-b">
+  <div id="page1-b" key="page1-b">
     <div class="section_1">
       <h2>{{title_1}}</h2>
       <div v-highlight>

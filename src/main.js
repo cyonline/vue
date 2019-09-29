@@ -9,11 +9,12 @@ Vue.config.debug = true;
 
 Vue.config.productionTip = false;
 
-import { router } from "./router";
+import router from "./router";
 
 // 引入指令
-import Highlight from './components/directives/highlight'
-Vue.use(Highlight)
+import Highlight from "./components/directives/highlight";
+
+Vue.use(Highlight);
 
 new Vue({
   store,

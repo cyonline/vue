@@ -1,5 +1,5 @@
 <template>
-  <div id="page1-a">
+  <div id="page1-a" key="page1-a">
     <h2>{{title}}</h2>
     <h4>表单元素</h4>
       <select v-model="type" @change="selectChange($event)">

@@ -1,5 +1,5 @@
 <template>
-  <div class="page1-c">
+  <div class="page1-c" key="page1-c">
     <h1>{{title}}</h1>
      <div class="section_1">
       <h2>重定向</h2>

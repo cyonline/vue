@@ -2,12 +2,12 @@
   <div id="header">
     <ul>
       <li
-        v-bind:class="{active:item.active}"
+        v-bind:class="{ active: item.active }"
         v-for="(item, index) in nav"
         :key="item.id"
         v-on:click="goPage(index)"
       >
-        <router-link :to="item.url">{{item.txt}}</router-link>
+        <router-link :to="item.url">{{ item.txt }}</router-link>
       </li>
     </ul>
   </div>
@@ -26,7 +26,6 @@ export default {
         { id: "3", txt: "page3", active: false, url: "/page_3" }
       ],
       goPage: function(i) {
-        console.info(i);
         this.nav.forEach(ele => {
           ele.active = false;
         });

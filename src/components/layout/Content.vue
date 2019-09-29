@@ -1,11 +1,27 @@
 <template>
   <div class="content">
-    <router-view class="view"></router-view>
+    <transition :name="transitionName">
+        <router-view class="view"></router-view>
+    </transition>
   </div>
 </template>
 <script>
 export default {
-  name: "cy-content"
+  name: "cy-content",
+  data (){
+    return {
+      transitionName:''
+    }
+  },
+  watch: {
+  '$route' (to, from) {
+    // console.info(to.name.charAtCode(0));
+    const toDepth = to.path.split('/').pop().charCodeAt(0);
+    const fromDepth = from.path.split('/').pop().charCodeAt(0);
+    console.info(toDepth,fromDepth)
+    this.transitionName = toDepth < fromDepth ? 'slide-up' : 'slide-down'
+  }
+}
 };
 </script>
 <style lang="scss" scoped>
@@ -19,4 +35,21 @@ export default {
   border-radius: 5px;
   overflow-y: scroll;
 }
+.slide-up-enter-active {
+  transition:transform 0.5s;
+   transform:translateY(0);
+}
+.slide-up-leave-active {
+   transition:transform 0.5s;
+   transform:translateY(100%);
+}
+.slide-down-enter-active {
+  transition:transform 0.5s;
+   transform:translateY(0);
+}
+.slide-down-leave-active {
+   transition:transform 0.5s;
+   transform:translateY(-100%);
+}
+
 </style>

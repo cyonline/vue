@@ -2,7 +2,6 @@
   <div class="container">
     <app-side :options="sidebar"></app-side>
     <app-content></app-content>
-    <!-- <router-view></router-view> -->
   </div>
 </template>
 <script>

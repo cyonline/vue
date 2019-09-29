@@ -1,3 +1,4 @@
+/* eslint-disable */
 import Vue from "vue";
 import VueRouter from "vue-router";
 
@@ -8,6 +9,7 @@ import AComponent from "./components/pages/page_1/aComponent";
 import BComponent from "./components/pages/page_1/bComponent";
 import CComponent from "./components/pages/page_1/cComponent";
 import DComponent from "./components/pages/page_1/dComponent";
+import EComponent from "./components/pages/page_1/eComponent";
 
 Vue.use(VueRouter);
 
@@ -15,27 +17,60 @@ const routes = [
     { path: '', component: Page_1 },
     {
         path: "/page_1/",
+        name: "page_1",
         component: Page_1,
         children: [
-            { path: '', component: AComponent },
-            { path: 'a', component: AComponent, name:'a' },
+            { path: '', redirect: { name: "a" } },
+            { path: 'a', component: AComponent, name: 'a' },
             { path: 'b', component: BComponent, name: 'b' },
             { path: 'c', component: CComponent, name: 'c' },
             { path: 'd', component: DComponent, name: 'd' },
-            { path: '**', redirect:'a'},
+            { path: 'e', component: EComponent, name: 'e' },
+            { path: '**', redirect: { name: "a" } },
         ]
     },
     {
         path: "/page_2",
+        name: "page_2",
         component: Page_2
     },
     {
         path: "*",
-        redirect: "page_1",
+        redirect: "/page_1",
     }
 ];
-export const router = new VueRouter({
-  mode: "history",
-  base: __dirname,
-  routes,
+const router = new VueRouter({
+    mode: "history",
+    base: __dirname,
+    routes,
 });
+router.beforeEach((to, from, next) => {
+    // ...
+    const routePath = ["page_1", "a", "b", "c", "d", "e", "page_2"];
+    let isLogin = true;
+    // console.info(routePath.indexOf(to.name));
+    // console.info(to);
+    // 当前路由是指定页时
+    if (routePath.indexOf(to.name) > 0) {
+        if (!isLogin) {
+            // 未登录,跳到登录页
+            alert('请先登录');
+            this.$router.push({ name: "login" });
+        } else {
+            // 已登录,跳转到当前路由
+            next();
+        }
+    }
+    // 当前路由是login时
+    if (to.name === 'login') {
+        if (!isLogin) {
+            // 未登录,跳到当前页
+            this.$router.push({ name: 'login' });
+        } else {
+            // 已经登录,跳转到首页
+            this.$router.push({ name: 'page_1' });
+        }
+    }
+    next();
+});
+export default router;
