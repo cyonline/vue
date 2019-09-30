@@ -19,6 +19,7 @@ export default {
         { txt: "重定向和别名", path: "/page_1/c" },
         { txt: "路由传参", path: "/page_1/d" },
         { txt: "路由守卫", path: "/page_1/e" },
+        { txt: "路由懒加载", path: "/page_1/f" },
       ]
     };
   }

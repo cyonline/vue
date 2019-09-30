@@ -2,14 +2,18 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 
-import Page_1 from "./components/pages/page_1";
-import Page_2 from "./components/pages/page_2";
+// import Page_1 from "./components/pages/page_1";
+// import Page_2 from "./components/pages/page_2";
+// import动态加载模块,获取的是一个promise对象
+const Page_1 = () => import("./components/pages/page_1");
+const Page_2 = () => import("./components/pages/page_2");
 
 import AComponent from "./components/pages/page_1/aComponent";
 import BComponent from "./components/pages/page_1/bComponent";
 import CComponent from "./components/pages/page_1/cComponent";
 import DComponent from "./components/pages/page_1/dComponent";
 import EComponent from "./components/pages/page_1/eComponent";
+import FComponent from "./components/pages/page_1/fComponent";
 
 Vue.use(VueRouter);
 
@@ -26,6 +30,7 @@ const routes = [
             { path: 'c', component: CComponent, name: 'c' },
             { path: 'd', component: DComponent, name: 'd' },
             { path: 'e', component: EComponent, name: 'e' },
+            { path: 'f', component: FComponent, name: 'F' },
             { path: '**', redirect: { name: "a" } },
         ]
     },
