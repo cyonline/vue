@@ -24,6 +24,7 @@ export default {
 .sideBar {
   width: 15rem;
   height: calc(100% - 10px);
+  overflow-y: scroll;
   background: #fff;
   margin-right: 10px;
   box-shadow: 5px 0px 7px #bbbbbb;

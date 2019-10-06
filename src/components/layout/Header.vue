@@ -45,7 +45,7 @@ export default {
   align-items: center;
   justify-content: center;
   margin-bottom: 10px;
-  box-shadow: 0px 6px 5px -7px #000;
+  box-shadow: 0px 0px 4px 0px #000;
 }
 .active {
   background: darken(#41b883, 2);

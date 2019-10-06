@@ -31,7 +31,6 @@ export default {
   height: calc(100vh - 80px);
   background: #ddd;
   display: flex;
-  // padding-top:10px;
   box-sizing: border-box;
 }
 </style>

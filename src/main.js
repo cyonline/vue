@@ -14,6 +14,7 @@ import router from "./router";
 // 引入指令
 import Highlight from "./components/directives/highlight";
 
+
 Vue.use(Highlight);
 
 new Vue({

@@ -1,14 +1,14 @@
 <template>
   <div class="content">
     <transition :name="transitionName">
-        <router-view class="view"></router-view>
+      <router-view class="view"></router-view>
     </transition>
   </div>
 </template>
 <script>
 export default {
   name: "cy-content",
-  data (){
+  data() {
     return {
       transitionName:''
     }
@@ -18,7 +18,7 @@ export default {
     // console.info(to.name.charAtCode(0));
     const toDepth = to.path.split('/').pop().charCodeAt(0);
     const fromDepth = from.path.split('/').pop().charCodeAt(0);
-    console.info(toDepth,fromDepth)
+    // console.info(toDepth,fromDepth)
     this.transitionName = toDepth < fromDepth ? 'slide-up' : 'slide-down'
   }
 }
