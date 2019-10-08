@@ -1,14 +1,12 @@
 <template>
   <div class="sideBar">
-    <div>
-      <ul>
-        <li v-for="(item, index) in options" :key="index">
-          <a>
-            <router-link :to="item.path">{{item.txt}}</router-link>
-          </a>
-        </li>
-      </ul>
-    </div>    
+    <ul>
+      <li v-for="(item, index) in options" :key="index">
+        <a>
+          <router-link :to="item.path">{{ item.txt }}</router-link>
+        </a>
+      </li>
+    </ul>
   </div>
 </template>
 <script>
@@ -55,6 +53,7 @@ export default {
         padding: 0 20px;
         box-sizing: border-box;
         cursor: pointer;
+        color: #000;
       }
     }
   }

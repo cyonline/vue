@@ -3,7 +3,7 @@ import App from "./App.vue";
 import store from "./store";
 
 import "./common/style/index.scss";
-
+import "./assets/json/user.json";
 // 开启debug模式
 Vue.config.debug = true;
 

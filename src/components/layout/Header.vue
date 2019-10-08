@@ -21,9 +21,9 @@ export default {
       className: "active",
       nav: [
         { id: "0", txt: "首页", active: true, url: "" },
-        { id: "1", txt: "page1", active: false, url: "/page_1" },
+        { id: "1", txt: "router", active: false, url: "/page_1" },
         { id: "2", txt: "page2", active: false, url: "/page_2" },
-        { id: "3", txt: "page3", active: false, url: "/page_3" }
+        { id: "3", txt: "axios", active: false, url: "/page_3" }
       ],
       goPage: function(i) {
         this.nav.forEach(ele => {
@@ -56,12 +56,14 @@ ul {
     list-style: none;
     float: left;
     a {
+      text-decoration: none;
       display: inline-block;
       width: 100px;
       height: 70px;
       line-height: 70px;
       text-align: center;
       cursor: pointer;
+      color: #fff;
       &:hover {
         background: darken(#41b883, 2);
       }

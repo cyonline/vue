@@ -7,6 +7,7 @@ import VueRouter from "vue-router";
 // import动态加载模块,获取的是一个promise对象
 const Page_1 = () => import("./components/pages/page_1");
 const Page_2 = () => import("./components/pages/page_2");
+const Page_3 = () => import("./components/pages/page_3");
 
 import AComponent from "./components/pages/page_1/aComponent";
 import BComponent from "./components/pages/page_1/bComponent";
@@ -45,6 +46,11 @@ const routes = [
             { path:'page_2_a', name:"page_2_a",component: Page_2_a,},
             { path:'page_2_b', name:"page_2_b",component: Page_2_b},
         ]
+    },
+    {
+        path: "/page_3",
+        name: "page_3",
+        component: Page_3,
     },
     {
         path: "*",

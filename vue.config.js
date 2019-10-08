@@ -1,23 +1,19 @@
 module.exports = {
-    baseUrl: process.env.NODE_ENV === 'production'
-        ? '//your_url'
+    publicPath: process.env.NODE_ENV === 'production'
+        ? '/localhost:3200'
         : '/',
-
     outputDir: 'dist',
-
     assetsDir: 'static',
-
     filenameHashing: true,
-
     // When building in multi-pages mode, the webpack config will contain different plugins
     // (there will be multiple instances of html-webpack-plugin and preload-webpack-plugin).
     // Make sure to run vue inspect if you are trying to modify the options for those plugins.
     pages: {
         index: {
             // entry for the pages
-            entry: 'src/pages/index/index.js',
+            entry: 'src/main.js',
             // the source template
-            template: 'src/pages/index/index.html',
+            template: 'public/index.html',
             // output as dist/index.html
             filename: 'index.html',
             // when using title option,
@@ -90,9 +86,9 @@ module.exports = {
             postcss: {
                 // options here will be passed to postcss-loader
             },
-            sass: {
-                data: `@import "@/common/styles/_colors.scss";`
-            }
+            // sass: {
+            //     data: `@import "@/common/styles/_colors.scss";`
+            // }
         }
     },
 
@@ -100,14 +96,18 @@ module.exports = {
     // https://webpack.js.org/configuration/dev-server/
     devServer: {
         open: true,
-        host: '127.0.0.1',
-        port: 3000,
+        host: 'localhost',
+        port: 3200,
         https: false,
         hotOnly: false,
-        proxy: null,
+        // proxy: {
+        //     '/static': {
+        //         target: 'http://localhost:3200',
+        //         pathRewrite: { '^/static': '' }
+        //     }
+        // },
         before: app => {
         },
-        lintOnSave:false,
         overlay: {
             warnings: false,
             errors: false
