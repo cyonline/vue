@@ -1,11 +1,11 @@
 module.exports = {
     publicPath: process.env.NODE_ENV === 'production'
-        ? '/localhost:3200'
+        ? '/php'
         : '/',
     outputDir: 'dist',
     assetsDir: 'static',
     filenameHashing: true,
-    // When building in multi-pages mode, the webpack config will contain different plugins
+    // When building in mult i-pages mode, the webpack config will contain different plugins
     // (there will be multiple instances of html-webpack-plugin and preload-webpack-plugin).
     // Make sure to run vue inspect if you are trying to modify the options for those plugins.
     pages: {

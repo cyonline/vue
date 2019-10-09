@@ -1,6 +1,8 @@
 <template>
   <div class="page_2_b">
-    <div class="input_Item">
+    <h2>这是子组件</h2>
+    <p>在下面表单中填写信息,提交后会显示在父组件中</p>
+    <div class="input_Item"> 
       姓名：
       <input type="text" v-model="user.name" />
     </div>

@@ -1,6 +1,7 @@
 <template>
   <div id="page_2">
     <div class="list">
+      <h2>这是父组件</h2>
       <ul>
         <li>姓名：<a href="javascript:;">{{user.name}}</a></li>
         <li>性别：<a href="javascript:;">{{user.sex}}</a></li>

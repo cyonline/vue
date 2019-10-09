@@ -40,10 +40,11 @@ export default {
     this.$watch("type", function(n, o) {
       console.info(n, o);
     });
+    console.info(this);
   },
   methods: {
     selectChange(e) {
-      console.log(e.target.value);
+      // console.log(e.target.value);
       this.option.forEach(ele => {
         if (e.target.value === ele.id) {
           this.typeName = ele.name;
