@@ -10,11 +10,12 @@ Vue.config.debug = true;
 Vue.config.productionTip = false;
 
 import router from "./router";
+require("./mock/mock");
 
 // 引入指令
 import Highlight from "./components/directives/highlight";
 
-
+// 注入指令
 Vue.use(Highlight);
 
 new Vue({

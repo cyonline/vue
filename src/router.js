@@ -17,6 +17,8 @@ import EComponent from "./components/pages/page_1/eComponent";
 import FComponent from "./components/pages/page_1/fComponent";
 import Page_2_a from "./components/pages/page_2/page_2_a";
 import Page_2_b from "./components/pages/page_2/page_2_b";
+import List from "./components/pages/page_3/list";
+import Article from "./components/pages/page_3/article";
 
 Vue.use(VueRouter);
 
@@ -51,11 +53,16 @@ const routes = [
         path: "/page_3",
         name: "page_3",
         component: Page_3,
+        children: [
+            { path: '',redirect: {name: "list"}},
+            { path: 'list',name:"list", component: List },
+            { path: 'article/:id',name:"article", component: Article },
+        ]
     },
-    {
-        path: "*",
-        redirect: "/page_1",
-    }
+    // {
+    //     path: "*",
+    //     redirect: "/page_1",
+    // }
 ];
 const router = new VueRouter({
     mode: "history",

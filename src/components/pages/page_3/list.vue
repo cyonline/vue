@@ -1,6 +1,24 @@
 <template>
-  <div class="page_3">
-    <router-view></router-view>
+  <div class="list">
+    <div class="container">
+      <div class="search">
+        <span>{{ title }}</span>
+        <a class="button" @click="getData">获取数据</a>
+      </div>
+      <!-- <p>res.data:{{data}}</p> -->
+      <div class="list">
+        <div class="list-item" v-for="(item,index) in data.articles" :key="index" @click="toDetail(item.id,item.title)">
+          <div class="photo">
+            <img :src="item.thumbnail_pic_s" alt />
+          </div>
+          <div class="des">
+            <p><i>{{item.title}}</i></p>
+            <span class="username" style="font-size:0.9rem;">{{item.author_name}}</span>
+            <span class="date" style="float:right;">{{item.date}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 <script>
@@ -12,10 +30,24 @@ export default {
       data: ""
     };
   },
+  mounted() {
+    this.getData();
+  },
+  methods: {
+    getData() {
+      Axios.get("/news", "type=top&key=123456").then(res => {
+        console.info(res.data);
+        this.data = res.data;
+      });
+    },
+    toDetail(id,title) {
+        this.$router.push({name:'article',params:{id:id,title:title}})
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>
-.page_3 {
+.list {
   width: 100%;
   height: calc(100vh - 80px);
   // display: flex;
